@@ -2,3 +2,7 @@
   flex-basis: 50%;
   background-color: pink;
 }
+
+.title {
+  text-align: center;
+}
