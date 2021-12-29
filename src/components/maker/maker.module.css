@@ -6,14 +6,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  backgrouond-color: makerWhite;
 }
 
 .container {
   display: flex;
-  flex:1;
+  flex: 1;
 }
 
-@media screen and (max-width: mediaQuery){
+@media screen and (max-width: mediaQuery) {
   .container {
     flex-direction: column;
   }
