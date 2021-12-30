@@ -3,7 +3,7 @@ import styles from "./card_edit_form.module.css";
 import Button from "../button/button";
 import ImageFileInput from "../image_file_input/image_file_input";
 
-const Card_edit_form = ({ card }) => {
+const CardEditForm = ({ card }) => {
   const { name, company, theme, title, email, message } = card;
   const onSubmit = () => {};
   return (
@@ -12,41 +12,41 @@ const Card_edit_form = ({ card }) => {
         className={styles.input}
         type="text"
         name="name"
-        value={name}
+        defaultValue={name}
       ></input>
       <input
         className={styles.input}
         type="text"
-        name="name"
-        value={company}
+        name="company"
+        defaultValue={company}
       ></input>
-      <select className={styles.select} name="theme" value={theme}>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="colorful">Colorful</option>
+      <select className={styles.select} name="theme" defaultValue={theme}>
+        <option value="light">light</option>
+        <option value="dark">dark</option>
+        <option value="colorful">colorful</option>
       </select>
       <input
         className={styles.input}
         type="text"
-        name="name"
-        value={title}
+        name="title"
+        defaultValue={title}
       ></input>
       <input
         className={styles.input}
         type="text"
-        name="name"
-        value={email}
+        name="email"
+        defaultValue={email}
       ></input>
       <textarea
         className={styles.textarea}
         name="message"
-        value={message}
+        defaultValue={message}
       ></textarea>
       <div className={styles.fileInput}>
-        <Button name="DELETE" onClick={onSubmit} />
+        <Button className={styles.button} name="DELETE" onClick={onSubmit} />
         <ImageFileInput name="image" />
       </div>
     </form>
   );
 };
-export default Card_edit_form;
+export default CardEditForm;
