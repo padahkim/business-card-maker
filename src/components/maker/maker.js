@@ -7,8 +7,8 @@ import Preview from "../preview/preview";
 import { useNavigate } from "react-router-dom";
 
 const Maker = ({ authService }) => {
-  const [cards, setCard] = useState([
-    {
+  const [cards, setCard] = useState({
+    1: {
       id: "1",
       name: "Ellie",
       company: "Samsung",
@@ -19,7 +19,7 @@ const Maker = ({ authService }) => {
       fileName: "ellie",
       fileURL: null,
     },
-    {
+    2: {
       id: "2",
       name: "pdk",
       company: "SI",
@@ -30,7 +30,7 @@ const Maker = ({ authService }) => {
       fileName: "ellie",
       fileURL: null,
     },
-    {
+    3: {
       id: "3",
       name: "Tete",
       company: "my house",
@@ -41,7 +41,7 @@ const Maker = ({ authService }) => {
       fileName: "dog",
       fileURL: "dogcute.com",
     },
-  ]);
+  });
 
   const onLogout = () => {
     authService.logout();
@@ -56,16 +56,46 @@ const Maker = ({ authService }) => {
     });
   });
 
-  const addCard = (card) => {
-    const update = [...cards, card];
-    setCard(update);
+  const createOrUpdateCard = (card) => {
+    setCard((cards) => {
+      const updated = { ...cards };
+      updated[card.id] = card;
+      return updated;
+    });
+  };
+
+  /*
+  const updateCard = (card) => {
+    setCard(
+      cards.map((item) => {
+        if (item.id === card.id) {
+          return card;
+        }
+        return item;
+      })
+    );
+  };
+*/
+
+  const deleteCard = (card) => {
+    setCard((cards) => {
+      const updated = { ...cards };
+      delete updated[card.id];
+      return updated;
+    });
   };
 
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
-        <Editor className={styles.editor} cards={cards} addCard={addCard} />
+        <Editor
+          className={styles.editor}
+          cards={cards}
+          addCard={createOrUpdateCard}
+          updateCard={createOrUpdateCard}
+          deleteCard={deleteCard}
+        />
         <Preview className={styles.preview} cards={cards} />
       </div>
       <Footer />
