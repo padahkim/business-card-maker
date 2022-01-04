@@ -1,10 +1,11 @@
-@value makerWheat, makerBlack, makerColorful, makerWhite, makerShadow from '../../common/colors.css';
+@value makerBlack, makerWhite, makerColorful, makerShadow, makerWheat from '../../common/colors.css';
 
 .card {
   display: flex;
   align-items: center;
-  border-radius: 1em;
   width: 100%;
+  border-radius: 1em;
+  margin-bottom: 0.5em;
   padding: 0.2em 0;
   background-color: yellow;
   box-shadow: 6px 6px 8px 0px makerShadow;
@@ -20,7 +21,6 @@
   background-color: makerWhite;
   color: makerBlack;
 }
-
 .card.colorful {
   background: makerColorful;
 }
@@ -37,6 +37,7 @@
 .info {
   width: 100%;
 }
+
 .name,
 .company,
 .title,
@@ -52,7 +53,7 @@
 }
 
 .company {
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 }
 
 .company::after {

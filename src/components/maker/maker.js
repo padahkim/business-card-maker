@@ -6,7 +6,7 @@ import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import { useNavigate } from "react-router-dom";
 
-const Maker = ({ authService }) => {
+const Maker = ({ FileInput, authService }) => {
   const [cards, setCard] = useState({
     1: {
       id: "1",
@@ -39,7 +39,7 @@ const Maker = ({ authService }) => {
       email: "eliie@dogmail.com",
       message: "wooohwowow!",
       fileName: "dog",
-      fileURL: "dogcute.com",
+      fileURL: "images/logo.png",
     },
   });
 
@@ -95,6 +95,7 @@ const Maker = ({ authService }) => {
           addCard={createOrUpdateCard}
           updateCard={createOrUpdateCard}
           deleteCard={deleteCard}
+          FileInput={FileInput}
         />
         <Preview className={styles.preview} cards={cards} />
       </div>

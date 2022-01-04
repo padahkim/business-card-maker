@@ -1,4 +1,4 @@
-@value makerLightGrey, makerGreen from '../../common/colors.css';
+@value makerGreen, makerLightGrey from '../../common/colors.css';
 
 .editor {
   flex-basis: 50%;
