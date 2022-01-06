@@ -1,4 +1,8 @@
-# simple Youtube mini project
+# React + Firebase + Cloudinary
+
+##### 📇Business card maker
+
+### 💡 Project goal
 
 - [x] Showing card data on card preview.
 - [x] Implements Create, Read, Update, Delete from firebase database by Card editor.
@@ -8,18 +12,9 @@
 
 ---
 
-### **💡 What i used**
-
-- React hook
-- Post css
-- Firebase database
-- Cloudinary
-
----
-
 ### **▶️Demonstration**
 
-![Screen recording](https://user-images.githubusercontent.com/91414657/148361287-b206fb8e-b5d5-4ce4-a490-b7b2ca0253dc.gif)
+![demonstration](https://user-images.githubusercontent.com/91414657/148362784-052713f3-fdf7-406f-9d05-5d3328bc67ef.gif)
 
 ---
 
