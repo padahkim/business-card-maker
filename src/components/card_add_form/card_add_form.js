@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import styles from "./card_add_form.module.css";
 import Button from "../button/button";
+import styles from "./card_add_form.module.css";
 
 const CardAddForm = ({ FileInput, onAdd }) => {
   const formRef = useRef();
@@ -26,7 +26,6 @@ const CardAddForm = ({ FileInput, onAdd }) => {
     event.preventDefault();
     const card = {
       id: Date.now(), //uuid
-      form: formRef || "",
       name: nameRef.current.value || "",
       company: companyRef.current.value || "",
       theme: themeRef.current.value,
@@ -36,8 +35,9 @@ const CardAddForm = ({ FileInput, onAdd }) => {
       fileName: file.fileName || "",
       fileURL: file.fileURL || "",
     };
+
     formRef.current.reset();
-    console.log(card);
+    setFile({ fileName: null, fileURL: null });
     onAdd(card);
   };
   return (

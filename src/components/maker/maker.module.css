@@ -7,11 +7,13 @@
   display: flex;
   flex-direction: column;
   backgrouond-color: makerWhite;
+  max-width: 115rem;
 }
 
 .container {
   display: flex;
   flex: 1;
+  mix-height: 0;
 }
 
 @media screen and (max-width: mediaQuery) {

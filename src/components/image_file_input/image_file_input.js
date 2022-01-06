@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./image_file_input.module.css";
 
-const ImageFileInput = ({ name, imageUploader, onFileChange }) => {
+const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
   const [loading, setLoading] = useState(false);
+
   const inputRef = useRef();
   const onButtonClick = (event) => {
     event.preventDefault();
@@ -18,16 +19,17 @@ const ImageFileInput = ({ name, imageUploader, onFileChange }) => {
       url: uploaded.url,
     });
   };
+
   return (
     <div className={styles.container}>
       <input
-        className={styles.input}
         ref={inputRef}
+        className={styles.input}
         type="file"
         accept="image/*"
         name="file"
         onChange={onChange}
-      ></input>
+      />
       {!loading && (
         <button
           className={`${styles.button} ${name ? styles.pink : styles.grey}`}
