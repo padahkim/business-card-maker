@@ -1,6 +1,6 @@
-# React + Firebase + Cloudinary
+#📇Business card maker 
 
-##### 📇Business card maker
+##### React + Firebase + Cloudinary
 
 ### 💡 Project goal
 
